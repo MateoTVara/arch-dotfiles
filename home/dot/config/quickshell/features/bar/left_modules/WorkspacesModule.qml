@@ -4,7 +4,7 @@ import "../../../components"
 import "../../../services"
 
 ModuleShell {
-    horizontalPadding: 16
+    horizontalPadding: 13
 
     RowLayout {
         spacing: 10
@@ -17,7 +17,7 @@ ModuleShell {
                 text: `${modelData.idx}`
                 font {
                     bold: true
-                    pointSize: 10.25
+                    pointSize: 10.5
                 }
                 color: hoverControl.hovered ? ColorsService.blue_300 : modelData.idx === NiriService.activeWorkspace ? ColorsService.blue_300 : ColorsService.foreground
 
