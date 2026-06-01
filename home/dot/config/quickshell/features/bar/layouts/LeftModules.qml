@@ -11,6 +11,8 @@ RowLayout {
         leftMargin: 6
     }
 
+    PowerModule {}
+
     ScreenshotModule {}
 
     WorkspacesModule {}

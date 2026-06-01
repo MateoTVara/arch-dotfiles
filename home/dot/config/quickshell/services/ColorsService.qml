@@ -26,4 +26,5 @@ Singleton {
     // Semantic Aliases
     readonly property color foreground: gray_200
     readonly property color background: blue_800
+    readonly property color border: blue_300
 }

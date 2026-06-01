@@ -28,7 +28,7 @@ Scope {
             Rectangle {
                 anchors.fill: parent
                 color: ColorsService.background
-                border.color: ColorsService.blue_300
+                border.color: ColorsService.border
                 border.width: 1
                 radius: 14
 
