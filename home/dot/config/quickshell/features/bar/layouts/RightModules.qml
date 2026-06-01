@@ -13,6 +13,8 @@ RowLayout {
 
     BatteryModule {}
 
+    AudioModule {}
+
     TrayModule {}
 
     ClockModule {}
