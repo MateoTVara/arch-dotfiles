@@ -23,7 +23,7 @@ ModuleShell {
 
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: NiriService.switchToWorkspace(modelData.idx)
+                    onClicked: NiriService.switchToWorkspace(textRoot.modelData.idx)
                 }
 
                 HoverHandler {

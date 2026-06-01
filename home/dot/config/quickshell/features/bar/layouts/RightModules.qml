@@ -11,6 +11,8 @@ RowLayout {
         rightMargin: 6
     }
 
+    BatteryModule {}
+
     TrayModule {}
 
     ClockModule {}

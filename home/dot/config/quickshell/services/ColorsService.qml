@@ -20,6 +20,9 @@ Singleton {
     readonly property color blue_800: "#282b34"
     readonly property color blue_900: "#060708"
 
+    // Reds
+    readonly property color red_500: "#fc4649"
+
     // Semantic Aliases
     readonly property color foreground: gray_200
     readonly property color background: blue_800

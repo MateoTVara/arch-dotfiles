@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import "../services"
 
 Container {
     id: root
@@ -10,10 +9,7 @@ Container {
     implicitHeight: 26
     horizontalPadding: 8.5
 
-    background: Rectangle {
-        color: ColorsService.blue_700
-        radius: 8
-    }
+    background: ModuleShellBackground {}
 
     contentItem: Item {
         implicitWidth: loader.implicitWidth

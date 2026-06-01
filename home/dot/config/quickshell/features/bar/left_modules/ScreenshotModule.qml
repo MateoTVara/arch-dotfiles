@@ -1,3 +1,5 @@
+pragma ComponentBehavior: Bound
+
 import Quickshell.Io
 import QtQuick
 import "../../../components"
@@ -12,11 +14,11 @@ import "../../../services"
 ModuleShell {
     id: root
     property var isHovered: hoverControl.hovered
+    horizontalPadding: 7
 
-    background: Rectangle {
+    background: ModuleShellBackground {
         id: backgroundRect
         color: root.isHovered ? ColorsService.blue_300 : ColorsService.blue_700
-        radius: 8
 
         HoverHandler {
             id: hoverControl
@@ -26,16 +28,6 @@ ModuleShell {
             ColorAnimation {
                 duration: 100
             }
-        }
-
-        function takeSelectionScreenshot() {
-            console.log("SELECTION");
-            selectionProcess.exec(["sh", "-c", "grim -g \"$(slurp)\" - | wl-copy"]);
-        }
-
-        function takeFullscreenScreenshot() {
-            console.log("FULLSCREEN");
-            fullscreenProcess.exec(["sh", "-c", "grim - | wl-copy"]);
         }
 
         MouseArea {
@@ -58,6 +50,16 @@ ModuleShell {
         Process {
             id: fullscreenProcess
             running: false
+        }
+
+        function takeSelectionScreenshot() {
+            console.log("SELECTION");
+            selectionProcess.exec(["sh", "-c", "grim -g \"$(slurp)\" - | wl-copy"]);
+        }
+
+        function takeFullscreenScreenshot() {
+            console.log("FULLSCREEN");
+            fullscreenProcess.exec(["sh", "-c", "grim - | wl-copy"]);
         }
     }
 

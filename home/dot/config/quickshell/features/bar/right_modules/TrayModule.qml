@@ -6,7 +6,6 @@ import Quickshell.Services.SystemTray
 import "../../../components"
 
 ModuleShell {
-    id: trayModule
     RowLayout {
         spacing: 10
         Repeater {
@@ -20,12 +19,6 @@ ModuleShell {
                 padding: 0
                 implicitWidth: 16
                 implicitHeight: 16
-
-                // Override to remove the default pressed visual feedback
-                background: Rectangle {
-                    color: "transparent"
-                    radius: 0
-                }
 
                 contentItem: Image {
                     source: trayButton.modelData.icon
