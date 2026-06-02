@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import "layouts"
-import "../../services"
+import "config"
 
 Scope {
     Variants {
@@ -10,7 +10,7 @@ Scope {
             required property var modelData
             screen: modelData
 
-            implicitHeight: 36
+            implicitHeight: BarConfig.height
             color: "transparent"
 
             anchors {
@@ -20,19 +20,20 @@ Scope {
             }
 
             margins {
-                top: 2
-                left: 175
-                right: 175
+                top: BarConfig.topMargin
+                left: BarConfig.inlineMargin
+                right: BarConfig.inlineMargin
             }
 
             Rectangle {
                 anchors.fill: parent
-                color: ColorsService.background
-                border.color: ColorsService.border
-                border.width: 1
-                radius: 14
+                color: BarConfig.bgColor
+                border.color: BarConfig.border.color
+                border.width: BarConfig.border.width
+                radius: BarConfig.border.radius
 
                 LeftModules {}
+                CenterModules {}
                 RightModules {}
             }
         }

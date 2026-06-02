@@ -4,17 +4,22 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
+import "../config"
 import "../../../components"
 import "../../../services"
 
 ModuleShell {
     id: root
     horizontalPadding: 7
+
     StyledText {
         text: "󰐥"
         font.pointSize: 10.5
+    }
 
+    background: ModuleShellBackground {
         MouseArea {
+            id: mouseArea
             anchors.fill: parent
             onClicked: powerMenu.visible ? close() : open()
 
@@ -34,17 +39,16 @@ ModuleShell {
                     inline: 8
                 })
 
-            visible: true
+            // visible: true
             color: "transparent"
-
             implicitHeight: menuLayout.implicitHeight + powerMenu.margin.block * 2
 
             anchor {
-                window: QsWindow.window
-                rect {
-                    x: root.mapToItem(QsWindow.window, 0, 0).x + root.width / 2 - powerMenu.width / 2
-                    y: root.mapToItem(QsWindow.window, 0, 36).y + 3
-                }
+                item: mouseArea
+                edges: Edges.Bottom
+                gravity: Edges.Bottom
+                adjustment: PopupAdjustment.Flip
+                margins.bottom: -((BarConfig.height - root.implicitHeight) / 2 + 3)
             }
 
             Rectangle {
@@ -98,21 +102,21 @@ ModuleShell {
                     }
                 }
             }
+        }
 
-            Process {
-                id: shutdownProcess
-                command: ["poweroff"]
-            }
+        Process {
+            id: shutdownProcess
+            command: ["poweroff"]
+        }
 
-            Process {
-                id: rebootProcess
-                command: ["reboot"]
-            }
+        Process {
+            id: rebootProcess
+            command: ["reboot"]
+        }
 
-            Process {
-                id: logoutProcess
-                command: ["niri", "msg", "action", "quit"]
-            }
+        Process {
+            id: logoutProcess
+            command: ["niri", "msg", "action", "quit"]
         }
     }
 }

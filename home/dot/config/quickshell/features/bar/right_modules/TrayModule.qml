@@ -3,9 +3,11 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import Quickshell
 import Quickshell.Services.SystemTray
+import "../config"
 import "../../../components"
 
 ModuleShell {
+    id: root
     RowLayout {
         spacing: 10
         Repeater {
@@ -61,14 +63,11 @@ ModuleShell {
                         menu: trayButton.modelData.menu
 
                         anchor {
-                            window: mouseArea.QsWindow.window
+                            item: mouseArea
+                            edges: Edges.Bottom
+                            gravity: Edges.Bottom
                             adjustment: PopupAdjustment.Flip
-                            onAnchoring: {
-                                const window = mouseArea.QsWindow.window;
-                                const widgetRect = window.contentItem.mapFromItem(mouseArea, 0, mouseArea.height, mouseArea.width, mouseArea.height);
-
-                                menuAnchor.anchor.rect = widgetRect;
-                            }
+                            margins.bottom: -((BarConfig.height - root.implicitHeight) / 2 + 3)
                         }
                     }
                 }

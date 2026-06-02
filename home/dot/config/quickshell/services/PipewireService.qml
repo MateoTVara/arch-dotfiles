@@ -6,10 +6,11 @@ import Quickshell.Services.Pipewire
 Singleton {
     id: root
 
-    readonly property int volume: Pipewire.defaultAudioSink.audio.volume * 100
-    readonly property bool muted: Pipewire.defaultAudioSink.audio.muted
+    readonly property int volume: Pipewire.defaultAudioSink?.audio ? Math.round(Pipewire.defaultAudioSink.audio.volume * 100) : 0
+
+    readonly property bool muted: Pipewire.defaultAudioSink?.audio?.muted ?? false
 
     PwObjectTracker {
-        objects: [Pipewire.defaultAudioSink]
+        objects: Pipewire.defaultAudioSink ? [Pipewire.defaultAudioSink] : []
     }
 }
