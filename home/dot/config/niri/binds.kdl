@@ -20,6 +20,10 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: wofi" {
         spawn "sh" "-c" "pgrep -x wofi >/dev/null && pkill -x wofi || exec wofi --show drun"
     }
+    // Mod+b { spawn "/home/marun/.local/bin/waybar-toggle.sh"; }
+    Mod+B hotkey-overlay-title="Toggle an Application: quickshell" {
+        spawn "sh" "-c" "pgrep -x quickshell >/dev/null && pkill -x quickshell || niri msg action spawn -- quickshell"
+    }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -202,11 +206,11 @@ binds {
     // If the window is already in a column, they will expel it out.
     // Mod+BracketLeft  { consume-or-expel-window-left; }
     // Mod+BracketRight { consume-or-expel-window-right; }
-    
+
     Mod+BraceLeft  { consume-or-expel-window-left; }
     Mod+BraceRight { consume-or-expel-window-right; }
-    
-    
+
+
 
     // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-window-into-column; }
@@ -285,5 +289,5 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+b { spawn "/home/marun/.local/bin/waybar-toggle.sh"; }
+    // Mod+b { spawn "/home/marun/.local/bin/waybar-toggle.sh"; }
 }

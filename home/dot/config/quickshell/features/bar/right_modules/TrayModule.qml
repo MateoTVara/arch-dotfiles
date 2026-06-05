@@ -9,6 +9,7 @@ import "../../../components"
 ModuleShell {
     id: root
     RowLayout {
+        // ColumnLayout {
         spacing: 10
         Repeater {
             model: SystemTray.items

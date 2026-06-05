@@ -1,9 +1,0 @@
-{
-    "include": "config.jsonc",
-    "modules-left": [
-        "custom/power",
-        "custom/screenshot",
-        "hyprland/workspaces",
-        "bluetooth"
-    ]
-}

@@ -27,10 +27,12 @@ layer-rule {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "/home/marun/.local/bin/waybar-launcher.sh"
+// spawn-at-startup "/home/marun/.local/bin/waybar-launcher.sh"
+spawn-at-startup "quickshell"
 // spawn-at-startup "hyprpaper"
 spawn-at-startup "awww-daemon" "-n" "wallpaper"
 // spawn-at-startup "awww" "img" "-n" "wallpaper" "/home/marun/Dotfiles/home/Pictures/wallpapers/Ranni_HP.jpg"
+// spawn-at-startup "awww" "img" "-n" "wallpaper" "/home/marun/Dotfiles/home/Pictures/wallpapers/Ranni.jpg"
 spawn-at-startup "awww" "img" "-n" "wallpaper" "/home/marun/Dotfiles/home/Pictures/wallpapers/Ranni.jpg"
 spawn-at-startup "qbittorrent"
 

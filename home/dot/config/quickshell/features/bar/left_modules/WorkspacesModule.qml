@@ -7,6 +7,7 @@ ModuleShell {
     horizontalPadding: 13
 
     RowLayout {
+        // ColumnLayout {
         spacing: 10
         Repeater {
             model: NiriService.workspaces

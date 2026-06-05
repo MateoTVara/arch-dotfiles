@@ -15,6 +15,7 @@
     },
     "preserveAspectRatio": true,
     "padding": {
+      "top": 1,
       "left": 4,
     },
   },
@@ -58,6 +59,12 @@
     {
       "key": "Backlight   ",
       "type": "brightness",
+      "keyColor": "#9656C9",
+      "outputColor": "#F7F7F7",
+    },
+    {
+      "key": "Memory      ",
+      "type": "memory",
       "keyColor": "#9656C9",
       "outputColor": "#F7F7F7",
     },

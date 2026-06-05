@@ -17,6 +17,7 @@ Scope {
                 top: true
                 left: true
                 right: true
+                // bottom: true
             }
 
             margins {

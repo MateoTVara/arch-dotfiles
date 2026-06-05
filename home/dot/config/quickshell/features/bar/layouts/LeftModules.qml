@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import "../left_modules"
 
 RowLayout {
+    // ColumnLayout {
     spacing: 6
 
     anchors {
