@@ -1,0 +1,93 @@
+* {
+    cool-light-gray:     #b5bbcf;
+    neutral-gray:        #848484;
+    muted-lavender-gray: #847c84;
+    dusty-blue:          #7589aa;
+    slate-blue:          #617291;
+    blue-gray:           #4d5667;
+    steel-blue:          #39465a;
+    deep-slate:          #2f3749;
+    charcoal-navy:       #282b34;
+    near-black:          #060708;
+
+    background-color: transparent;
+    text-color: @cool-light-gray;
+}
+
+window {
+    width: 30%;
+    border: 1px;
+    border-color: @cool-light-gray;
+
+    border-radius: 14px;
+
+    background-color: @near-black;
+}
+
+mainbox {
+    children: [inputbar, message, listview];
+}
+
+inputbar {
+    background-color: @near-black;
+
+    border: 0px 0px 1px 0px;
+    border-color: @cool-light-gray;
+
+    padding: 12px;
+    margin: 8px;
+
+    border-radius: 8px 8px 0px 0px;
+}
+
+prompt {
+    text-color: @cool-light-gray;
+    padding: 0px 8px 0px 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+entry {
+    placeholder: " Search | Поиск | Haku | 検索 | Buscar";
+    text-color: @cool-light-gray;
+}
+
+listview {
+    lines: 10;
+    dynamic: true;
+
+    border: 1px 0px 0px 0px;
+    border-color: @cool-light-gray;
+
+    padding: 12px 0px 0px 0px;
+    margin: 0px 0px 8px 0px;
+
+    scrollbar: false;
+}
+
+element {
+    padding: 6px;
+    margin: 0px 12px 8px 12px;
+
+    border-radius: 12px;
+
+    text-color: @cool-light-gray;
+}
+
+element normal.normal {
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: @charcoal-navy;
+    text-color: @cool-light-gray;
+}
+
+element-icon {
+    size: 32px;
+    margin: 0px 12px 0px 6px;
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
+}

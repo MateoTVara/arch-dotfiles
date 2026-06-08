@@ -17,8 +17,11 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     // Mod+D hotkey-overlay-title="Run an Application: wofi" { spawn "wofi"; } // Added
-    Mod+D hotkey-overlay-title="Run an Application: wofi" {
-        spawn "sh" "-c" "pgrep -x wofi >/dev/null && pkill -x wofi || exec wofi --show drun"
+    // Mod+D hotkey-overlay-title="Run an Application: wofi" {
+    //     spawn "sh" "-c" "pgrep -x wofi >/dev/null && pkill -x wofi || exec wofi --show drun"
+    // }
+    Mod+D hotkey-overlay-title="Run an Application: rofi" {
+        spawn "sh" "-c" "pgrep -x rofi >/dev/null && pkill -x rofi || rofi -show drun"
     }
     // Mod+b { spawn "/home/marun/.local/bin/waybar-toggle.sh"; }
     Mod+B hotkey-overlay-title="Toggle an Application: quickshell" {
