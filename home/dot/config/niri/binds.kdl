@@ -27,6 +27,9 @@ binds {
     Mod+B hotkey-overlay-title="Toggle an Application: quickshell" {
         spawn "sh" "-c" "pgrep -x quickshell >/dev/null && pkill -x quickshell || niri msg action spawn -- quickshell"
     }
+    Mod+P hotkey-overlay-title="Toggle rofi project launcher" {
+      spawn "sh" "-c" "pgrep -x rofi >/dev/null && pkill -x rofi || $HOME/Scripts/rofi_project-launcher.sh"
+    }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
