@@ -13,13 +13,15 @@ if tmux has-session -t "$SESSION" 2>/dev/null; then
 fi
 
 
-PROJECT_DIR="$HOME/"
+PROJECT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 # Create session + window 1
+# -s "$SESSION"     \ # Session name
+# -n root           \ # Initial window name
+# -c "$PATH"          # Session working directory
 tmux new-session -d \
-  -s "$SESSION"     \ # Session name
-  # -n root           \ # Initial window name
-  -c "$PROJECT_DIR"          # Session working directory
+  -s "$SESSION"     \
+  -c "$PROJECT_DIR"
 
 #############################################
 # ====   Window actions   ================= #
@@ -30,7 +32,7 @@ tmux new-session -d \
 # add a window
 # tmux new-window \
 #   -t "$SESSION":n
-#   -n web 
+#   -n web
 #   -c "$PROJECT_DIR"
 
 # run a command - window specificity
