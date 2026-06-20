@@ -54,8 +54,4 @@ fi
 
 cd "$project_dir" || exit 1
 
-bash ./launch.sh
-
-project_name="$(basename "$project_dir")"
-
-alacritty -e tmux attach -t "$project_name" &
+alacritty -e bash ./launch.sh &
