@@ -5,6 +5,7 @@ SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+fpath=(~/.zsh/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -45,7 +46,7 @@ zle -N down-line-or-beginning-search
 bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
-# 
+#
 setopt AUTO_PARAM_SLASH
 
 # Reset cursor to beam (bar) after every command

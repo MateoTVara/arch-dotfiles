@@ -42,14 +42,14 @@ list_projects() {
 selected=$(
     list_projects |
     sort |
-    rofi -dmenu -p "Project:" -theme-str '
+    rofi -dmenu -i -p "Project:" -theme-str '
         prompt {
-        padding: 0px;
-        margin: 0px 4px 0px 0px;
+            padding: 0px;
+            margin: 0px 4px 0px 0px;
         }
         element-icon {
-        size: 0px;
-        margin: 0px;
+            size: 0px;
+            margin: 0px;
         }
     '
 )
