@@ -32,24 +32,26 @@ ModuleShell {
             }
         }
 
-        PopupWindow {
+        PanelWindow {
             id: powerMenu
-            property var margin: ({
-                    block: 6,
-                    inline: 8
-                })
-
-            // visible: true
-            color: "transparent"
-            implicitHeight: menuLayout.implicitHeight + powerMenu.margin.block * 2
-
-            anchor {
-                item: mouseArea
-                edges: Edges.Bottom
-                gravity: Edges.Bottom
-                adjustment: PopupAdjustment.Flip
-                margins.bottom: -((BarConfig.height - root.implicitHeight) / 2 + 3)
+            property var padding: ({
+                block: 6,
+                inline: 8
+            })
+            visible: false
+            anchors {
+                top: true
+                left: true
             }
+            margins {
+                top: BarConfig.height + 5
+                left: BarConfig.inlineMargin
+                + 6
+                + (root.width - powerMenu.width) / 2
+            }
+            color: "transparent"
+            implicitHeight: menuLayout.implicitHeight + powerMenu.padding.block * 2.5
+            exclusionMode: ExclusionMode.Ignore
 
             Rectangle {
                 anchors.fill: parent
@@ -62,11 +64,8 @@ ModuleShell {
                 id: menuLayout
                 spacing: 6
                 anchors {
-                    fill: parent
-                    topMargin: powerMenu.margin.block
-                    bottomMargin: powerMenu.margin.block
-                    leftMargin: powerMenu.margin.inline
-                    rightMargin: powerMenu.margin.inline
+                    verticalCenter: parent.verticalCenter
+                    horizontalCenter: parent.horizontalCenter
                 }
 
                 Repeater {
@@ -85,16 +84,17 @@ ModuleShell {
                         }
                     ]
 
-                    ModuleShell {
+                    delegate: ModuleShell {
                         id: menuItem
                         required property var modelData
+                        Layout.alignment: Qt.AlignCenter
                         Layout.fillWidth: true
                         background: ModuleShellBackground {
                             MouseArea {
                                 anchors.fill: parent
                                 onClicked: menuItem.modelData.action()
                             }
-                        }
+                        }    
                         StyledText {
                             text: menuItem.modelData.text
                             font.pointSize: 10.5

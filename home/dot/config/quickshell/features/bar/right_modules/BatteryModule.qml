@@ -24,6 +24,8 @@ ModuleShell {
                 prefix = "󱈑";
             } else if (state === UPowerDeviceState.Charging) {
                 prefix = "󰂄";
+            } else if (state === UPowerDeviceState.Empty) {
+                prefix = "󱊡";
             } else if (state === UPowerDeviceState.Discharging) {
                 if (currentBatteryLevel >= 70) {
                     prefix = "󱊣";

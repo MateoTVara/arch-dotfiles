@@ -15,11 +15,15 @@ compinit
 # Compinstall save file
 zstyle :compinstall filename "$HOME/.zshrc"
 
+# Direnv setup
+eval "$(direnv hook zsh)"
 # Starship setup
 eval "$(starship init zsh)"
 
 # fnm setup
-eval "$(fnm env --use-on-cd --shell zsh)"
+if [[ -z "$IN_NIX_SHELL" ]]; then
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 
 # Enable LS_COLORS
 eval "$(dircolors -b)"
@@ -53,3 +57,4 @@ setopt AUTO_PARAM_SLASH
 precmd() { printf '\e[5 q' }
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
