@@ -1,10 +1,10 @@
-import qs.components
-import qs.config
-import qs.features.bar.config
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
+import qs.components
+import qs.config
+import qs.features.bar.config
 
 ModuleShell {
     id: root
@@ -45,6 +45,7 @@ ModuleShell {
             property int closedOffset: -12
             property int topOffset: powerMenu.closedOffset
 
+            visible: false
             color: "transparent"
             implicitHeight: menuLayout.implicitHeight + padding.block * 2
             exclusionMode: ExclusionMode.Ignore
@@ -63,7 +64,6 @@ ModuleShell {
                 id: content
 
                 anchors.fill: parent
-                opacity: powerMenu.opened ? 1 : 0
 
                 Rectangle {
                     anchors.fill: parent
@@ -146,12 +146,27 @@ ModuleShell {
 
                 }
 
-                Behavior on opacity {
-                    NumberAnimation {
-                        duration: 180
-                        easing.type: Easing.OutCubic
+                NumberAnimation {
+                    id: opacityAnim
+
+                    target: content
+                    property: "opacity"
+                    duration: 225
+                    easing.type: Easing.OutCubic
+                    onFinished: {
+                        if (!powerMenu.opened)
+                            powerMenu.visible = false;
+
+                    }
+                }
+
+                Connections {
+                    function onOpenedChanged() {
+                        opacityAnim.to = powerMenu.opened ? 1 : 0;
+                        opacityAnim.restart();
                     }
 
+                    target: powerMenu
                 }
 
             }
@@ -160,11 +175,6 @@ ModuleShell {
                 NumberAnimation {
                     duration: 225
                     easing.type: Easing.OutCubic
-                    onFinished: {
-                        if (!powerMenu.opened)
-                            powerMenu.visible = false;
-
-                    }
                 }
 
             }
