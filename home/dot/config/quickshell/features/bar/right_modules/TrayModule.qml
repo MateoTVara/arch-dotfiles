@@ -3,13 +3,13 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import Quickshell
 import Quickshell.Services.SystemTray
-import "../config"
-import "../../../components"
+import qs.features.bar.config
+import qs.components
 
 ModuleShell {
     id: root
     RowLayout {
-        // ColumnLayout {
+    // ColumnLayout {
         spacing: 10
         Repeater {
             model: SystemTray.items

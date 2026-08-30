@@ -1,10 +1,10 @@
 import QtQuick
-import "../services"
+import qs.config
 
 Text {
     id: root
 
-    color: ColorsService.foreground
+    color: ColorsConfig.foreground
     font {
         family: "Maple Mono"
         pointSize: 10

@@ -1,8 +1,6 @@
-// pragma ComponentBehavior: Bound
-
-import "../../../components"
-import "../../../services"
-import "../config"
+import qs.components
+import qs.config
+import qs.features.bar.config
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
@@ -69,8 +67,8 @@ ModuleShell {
 
                 Rectangle {
                     anchors.fill: parent
-                    color: ColorsService.background
-                    border.color: ColorsService.border
+                    color: ColorsConfig.background
+                    border.color: ColorsConfig.border
                     radius: 12
                 }
 
@@ -110,7 +108,7 @@ ModuleShell {
                             StyledText {
                                 text: menuItem.modelData.text
                                 font.pointSize: 10.5
-                                color: menuItem.isHovered ? ColorsService.blue_800 : ColorsService.foreground
+                                color: menuItem.isHovered ? ColorsConfig.blue_800 : ColorsConfig.foreground
 
                                 Behavior on color {
                                     ColorAnimation {
@@ -122,7 +120,7 @@ ModuleShell {
                             }
 
                             background: ModuleShellBackground {
-                                color: menuItem.isHovered ? ColorsService.blue_300 : ColorsService.blue_700
+                                color: menuItem.isHovered ? ColorsConfig.blue_300 : ColorsConfig.blue_700
 
                                 HoverHandler {
                                     id: hoverControl

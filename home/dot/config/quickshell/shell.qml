@@ -1,7 +1,7 @@
 //@ pragma UseQApplication
 
 import Quickshell
-import "features/bar"
+import qs.features.bar
 
 Scope {
     Bar {}

@@ -1,7 +1,6 @@
 module services
 
 singleton TimeService 1.0 TimeService.qml
-singleton ColorsService 1.0 ColorsService.qml
 singleton NiriService 1.0 NiriService.qml
 singleton BatteryService 1.0 BatteryService.qml
 singleton PipewireService 1.0 PipewireService.qml

@@ -1,6 +1,6 @@
 import QtQuick
-import "../../../services"
-import "../../../components"
+import qs.services
+import qs.components
 
 ModuleShell {
     StyledText {

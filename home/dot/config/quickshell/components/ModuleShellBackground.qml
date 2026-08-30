@@ -1,7 +1,7 @@
 import QtQuick
-import "../services"
+import qs.config
 
 Rectangle {
-    color: ColorsService.blue_700
+    color: ColorsConfig.blue_700
     radius: 8
 }

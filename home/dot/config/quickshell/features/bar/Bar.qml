@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
-import "layouts"
-import "config"
+import qs.features.bar.layouts
+import qs.features.bar.config
 
 Scope {
     Variants {
@@ -17,7 +17,6 @@ Scope {
                 top: true
                 left: true
                 right: true
-                // bottom: true
             }
 
             margins {

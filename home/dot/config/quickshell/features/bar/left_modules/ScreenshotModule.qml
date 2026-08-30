@@ -2,8 +2,8 @@ pragma ComponentBehavior: Bound
 
 import Quickshell.Io
 import QtQuick
-import "../../../components"
-import "../../../services"
+import qs.components
+import qs.config
 
 // Bugs:
 // - first click doesn't trigger grim
@@ -18,7 +18,7 @@ ModuleShell {
 
     background: ModuleShellBackground {
         id: backgroundRect
-        color: root.isHovered ? ColorsService.blue_300 : ColorsService.blue_700
+        color: root.isHovered ? ColorsConfig.blue_300 : ColorsConfig.blue_700
 
         HoverHandler {
             id: hoverControl
@@ -69,7 +69,7 @@ ModuleShell {
         font {
             pointSize: 10.5
         }
-        color: root.isHovered ? ColorsService.blue_800 : ColorsService.foreground
+        color: root.isHovered ? ColorsConfig.blue_800 : ColorsConfig.foreground
 
         Behavior on color {
             ColorAnimation {

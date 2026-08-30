@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
-import "../../../components"
-import "../../../services"
+import qs.components
+import qs.services
+import qs.config
 
 ModuleShell {
     horizontalPadding: 13
@@ -20,7 +21,7 @@ ModuleShell {
                     bold: true
                     pointSize: 10.5
                 }
-                color: hoverControl.hovered ? ColorsService.blue_300 : modelData.idx === NiriService.activeWorkspace ? ColorsService.blue_300 : ColorsService.foreground
+                color: hoverControl.hovered ? ColorsConfig.blue_300 : modelData.idx === NiriService.activeWorkspace ? ColorsConfig.blue_300 : ColorsConfig.foreground
 
                 MouseArea {
                     anchors.fill: parent

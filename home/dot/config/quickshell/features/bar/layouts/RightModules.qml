@@ -1,9 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
-import "../right_modules"
+import qs.features.bar.right_modules
 
 RowLayout {
-    // ColumnLayout {
     spacing: 6
 
     anchors {

@@ -2,8 +2,9 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import Quickshell.Services.UPower
-import "../../../components"
-import "../../../services"
+import qs.components
+import qs.services
+import qs.config
 
 ModuleShell {
     id: root
@@ -12,7 +13,7 @@ ModuleShell {
 
     background: Rectangle {
         radius: 8
-        color: root.lowBattery ? ColorsService.red_500 : ColorsService.blue_700
+        color: root.lowBattery ? ColorsConfig.red_500 : ColorsConfig.blue_700
     }
 
     StyledText {
@@ -37,6 +38,6 @@ ModuleShell {
             }
             return `${prefix} ${currentBatteryLevel}%`;
         }
-        color: root.lowBattery ? ColorsService.blue_900 : ColorsService.foreground
+        color: root.lowBattery ? ColorsConfig.blue_900 : ColorsConfig.foreground
     }
 }

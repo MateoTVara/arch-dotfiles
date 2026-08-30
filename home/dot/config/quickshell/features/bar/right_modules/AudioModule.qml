@@ -2,8 +2,8 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import Quickshell.Io
-import "../../../components"
-import "../../../services"
+import qs.components
+import qs.services
 
 ModuleShell {
     id: root
