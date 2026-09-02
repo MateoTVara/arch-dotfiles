@@ -1,5 +1,7 @@
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  -- extensions = { 'neo-tree' }
+  options = {
+    theme = 'tokyonight-night'
+  }
 }

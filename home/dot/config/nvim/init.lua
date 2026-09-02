@@ -10,6 +10,8 @@ vim.o.smarttab = true
 vim.o.expandtab = true
 
 vim.o.number = true
+vim.o.relativenumber = true
+vim.o.cursorline = true
 
 -- Allow cursor to cross line boundaries with arrow keys in insert mode
 vim.opt.whichwrap:append("<,>,[,]")

@@ -20,7 +20,8 @@ return {
       "intelephense",
       "html",
       "cssls",
-      "qmlls"
+      "qmlls",
+      "clangd",
     },
   },
 },
@@ -37,6 +38,9 @@ return {
     vim.lsp.enable("intelephense")
     vim.lsp.enable("html")
     vim.lsp.enable("cssls")
+    vim.lsp.enable("qmlls")
+    vim.lsp.enable("clangd")
+    vim.lsp.enable("nixd")
 
     -- keymaps
     vim.api.nvim_create_autocmd("LspAttach", {

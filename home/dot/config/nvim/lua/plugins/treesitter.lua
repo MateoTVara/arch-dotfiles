@@ -5,10 +5,12 @@ return {
     build = ':TSUpdate',
     opts = {
       ensure_installed = {
+        "nix",
         "lua", "python", "php",
         "javascript", "typescript", "html", "css",
         "jsx", "tsx",
-        "rust", "java",
+        "c", "rust",
+        "java",
         "qmljs"
       },
       highlight = {
